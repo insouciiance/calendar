@@ -1,0 +1,88 @@
+@import '../../shared/scss/shared.scss';
+
+.Wrapper {
+	padding-top: 200px;
+	.FormContainer {
+		margin: 0 auto 0;
+		background-color: $page-bg-theme-lighten5;
+		width: 40%;
+		padding: 30px 0 0;
+
+		@media (max-width: 1200px) {
+			width: 60%;
+		}
+
+		@media (max-width: 800px) {
+			width: 80%;
+		}
+
+		@media (max-width: 600px) {
+			width: 96%;
+		}
+
+		h3 {
+			text-align: center;
+			color: $page-main-text-color;
+		}
+
+		.Error {
+			text-align: center;
+			span {
+				color: red;
+			}
+		}
+
+		form {
+			padding: 15px;
+
+			div {
+				margin: 10px 0;
+				color: $page-main-text-color;
+
+				label {
+					display: inline-block;
+					width: 40%;
+				}
+
+				input {
+					display: inline-block;
+					width: 60%;
+					border: none;
+					background-color: $page-bg-theme;
+					line-height: 26px;
+					font-size: 16px;
+					padding: 5px;
+					border-radius: 2px;
+					color: $page-bg-theme-lighten20;
+					border: 1px solid transparent;
+
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+
+			.SubmitButton {
+				width: 100%;
+				margin-top: 30px;
+
+				&[disabled] {
+					background-color: $page-bg-theme-lighten10;
+					color: $page-bg-theme-lighten20;
+				}
+			}
+		}
+	}
+
+	.SwitchAuthTypeLink {
+		display: block;
+		text-align: center;
+		font-size: 14px;
+		margin-top: 10px;
+		color: $page-bg-theme-lighten20;
+
+		&:active {
+			color: $page-bg-theme-lighten10;
+		}
+	}
+}

@@ -1,0 +1,59 @@
+$page-bg-theme: #242424;
+$page-bg-theme-lighten5: #313131;
+$page-bg-theme-lighten10: #3e3e3e;
+$page-bg-theme-lighten15: #4a4a4a;
+$page-bg-theme-lighten20: #575757;
+
+$page-main-text-color: rgb(153, 147, 145);
+
+.PointerLeft,
+.PointerRight {
+	cursor: pointer;
+	z-index: 1;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: center;
+	height: 36px;
+	width: 36px;
+	color: lightblue;
+	background-color: transparentize($color: $page-bg-theme-lighten20, $amount: 0.15);
+	padding: 6px 8px 6px;
+	border-radius: 50%;
+	user-select: none;
+	transition: 0.15s;
+
+	&:hover {
+		background-color: $page-bg-theme-lighten20;
+	}
+}
+
+.PointerLeft {
+	left: 5px;
+}
+
+.PointerRight {
+	right: 5px;
+}
+
+button {
+	border: none;
+	background-color: $page-bg-theme;
+	color: $page-main-text-color;
+	padding: 8px;
+	cursor: pointer;
+	transition: 0.1s;
+	border: 1px solid $page-bg-theme-lighten10;
+
+	i {
+		padding-right: 8px;
+	}
+
+	&:hover:not(:disabled) {
+		background-color: $page-bg-theme-lighten5;
+		border-color: $page-bg-theme-lighten15;
+	}
+}
+
+*:focus {
+	outline: none;
+}

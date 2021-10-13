@@ -1,0 +1,100 @@
+@import '../../../../shared/scss/shared.scss';
+
+.CalendarEventDetailsCard {
+	height: 80%;
+	width: 200px;
+	background-color: $page-bg-theme;
+	margin: 0 20px;
+	padding: 10px;
+	border-radius: inherit;
+	color: inherit;
+	cursor: pointer;
+	user-select: none;
+	transition: 0.2s;
+	border: 1px solid transparent;
+
+	&:hover {
+		background-color: lighten($color: $page-bg-theme, $amount: 2);
+	}
+
+	&.IsSelected {
+		background-color: $page-bg-theme-lighten10;
+		transform: scale(1.1);
+	}
+
+	.CalendarEventDetailsCardName {
+		font-size: 18px;
+		line-height: 18px;
+		height: 40px;
+		margin-bottom: 15px;
+	}
+	.CalendarEventDetailsCardDate {
+		margin: 15px 0;
+		div {
+			margin: 5px;
+		}
+	}
+	.CalendarEventDetailsCardCountryImportance {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.CalendarEventDetailsCardCountry {
+			width: 35%;
+			div {
+				display: inline-block;
+			}
+			.CalendarEventDetailsCardCountryCode {
+				margin-right: 10px;
+			}
+		}
+		.CalendarEventDetailsCardImportance {
+			height: 5px;
+			width: 60%;
+			position: relative;
+		}
+	}
+}
+
+.Ordinary,
+.Compelling,
+.Important {
+	&::before,
+	div {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 10px;
+	}
+	&::before {
+		right: 0;
+		background-color: $page-bg-theme-lighten5;
+	}
+
+	div {
+		transition: 0.2s;
+	}
+}
+
+.Ordinary {
+	div {
+		right: 67%;
+		// background-color: green;
+	}
+}
+
+.Compelling {
+	div {
+		right: 33%;
+		// background-color: orange;
+	}
+}
+
+.Important {
+	div {
+		right: 0;
+		// background-color: red;
+	}
+}

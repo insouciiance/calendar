@@ -1,0 +1,43 @@
+@import '../../../shared/scss/shared.scss';
+
+.CalendarDays {
+	padding: 5px;
+	display: flex;
+	justify-content: space-around;
+	user-select: none;
+	height: 34px;
+	div {
+		margin: 0 1%;
+		height: 24px;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+		color: $page-main-text-color;
+
+		&::before {
+			content: '';
+			height: 2px;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background-color: $page-bg-theme;
+		}
+
+		&::after {
+			content: attr(data-date);
+			color: inherit;
+			background-color: $page-bg-theme-lighten5;
+			padding: 5px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&:hover {
+			color: lightgray;
+		}
+	}
+}

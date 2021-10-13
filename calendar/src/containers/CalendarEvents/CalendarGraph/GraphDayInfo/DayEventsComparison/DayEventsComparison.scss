@@ -1,0 +1,43 @@
+@import '../../../../../shared/scss/shared.scss';
+
+.DayEventsComparison {
+	flex: 1 1;
+	border: {
+		top: 2px solid $page-bg-theme;
+		bottom: 2px solid $page-bg-theme;
+	}
+
+	@media (min-width: 800px) {
+		border: {
+			left: 2px solid $page-bg-theme;
+			right: 2px solid $page-bg-theme;
+			top: none;
+			bottom: none;
+		}
+	}
+
+	p {
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.EventsTypeComparison {
+		display: flex;
+		justify-content: space-around;
+		text-align: center;
+
+		span,
+		i {
+			flex: 1 1;
+			font-size: 2rem;
+
+			@media (min-width: 800px) {
+				font-size: 1.5rem;
+			}
+
+			@media (min-width: 1200px) {
+				font-size: 2rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+@import '../../shared/scss/shared.scss';
+
+.LayoutWrapper {
+	.HeaderInfo {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 3px;
+
+		header {
+			text-align: right;
+			.UserInfo {
+				cursor: default;
+				padding: 8px 0;
+				margin: auto;
+				color: $page-main-text-color;
+
+				@media (max-width: 800px) {
+					width: auto;
+					margin-right: 10px;
+				}
+
+				@media (max-width: 400px) {
+					font-size: 12px;
+				}
+
+				span {
+					color: lighten($page-main-text-color, 20);
+					&:hover {
+						animation: glitchy 0.3s linear 0s infinite;
+					}
+				}
+
+				a {
+					color: $page-main-text-color;
+					margin-left: 15px;
+
+					&:active {
+						color: darken($page-main-text-color, 20);
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes glitchy {
+	0% {
+		text-shadow: 2px 2px blue, -2px 2px red;
+	}
+
+	25% {
+		text-shadow: -2px -2px blue, 2px -2px red;
+	}
+
+	50% {
+		text-shadow: -2px 2px blue, 2px 2px red;
+	}
+
+	75% {
+		text-shadow: 2px -2px blue, -2px -2px red;
+	}
+
+	100% {
+		text-shadow: 2px 2px blue, -2px 2px red;
+	}
+}

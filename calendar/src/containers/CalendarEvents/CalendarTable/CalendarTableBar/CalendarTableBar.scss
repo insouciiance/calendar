@@ -1,0 +1,127 @@
+@import '../../../../shared/scss/shared.scss';
+
+.ContentWrapper {
+	padding: 10px;
+	margin: 15px 0;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-size: 14px;
+	position: absolute;
+	cursor: pointer;
+	user-select: none;
+	height: 90px;
+	width: 70%;
+	background-color: $page-bg-theme-lighten5;
+
+	&.IsSelected {
+		height: 100px;
+		width: 75%;
+		transform: translate(-2.5%, -5px);
+		text-shadow: 1px 1px 1px black, -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black;
+		.EventsCount {
+			border-radius: 2px;
+		}
+	}
+
+	> div {
+		word-break: break-word;
+		overflow: hidden;
+	}
+
+	.Essentials {
+		margin: 0 0 8px;
+		height: 36px;
+	}
+
+	.DateCountry {
+		display: flex;
+		justify-content: space-between;
+		font-size: 12px;
+		.Date {
+			display: inline-block;
+			padding: 3px;
+		}
+		.Country {
+			padding: 3px;
+			display: inline-block;
+			.CountryName {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.EventsCount {
+		position: absolute;
+		left: 100%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		padding: 2px;
+		border: inherit;
+		background-color: inherit;
+		font-size: inherit;
+		line-height: 14px;
+		// height: 20px;
+		width: 20px;
+		text-align: center;
+	}
+}
+
+.Ordinary {
+	// border-color: green;
+	// box-shadow: 0 0 4px green;
+	top: 0;
+}
+
+.Compelling {
+	// border-color: orange;
+	// box-shadow: 0 0 4px orange;
+	top: 105px;
+}
+
+.Important {
+	// border-color: red;
+	// box-shadow: 0 0 4px red;
+	top: 210px;
+}
+
+.EventsCount2:not(.IsSelected) {
+	&::before {
+		content: '';
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		bottom: -4px;
+		right: -4px;
+		border: inherit;
+		border-radius: inherit;
+		box-shadow: inherit;
+		background-color: inherit;
+		z-index: -1;
+	}
+}
+
+.EventsCount3:not(.IsSelected) {
+	&::before {
+		top: 4px;
+		left: 4px;
+		bottom: -4px;
+		right: -4px;
+		z-index: -1;
+	}
+	&::after {
+		top: 7px;
+		left: 7px;
+		bottom: -7px;
+		right: -7px;
+		z-index: -2;
+	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		border: inherit;
+		border-radius: inherit;
+		box-shadow: inherit;
+		background-color: inherit;
+	}
+}

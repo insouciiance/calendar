@@ -1,0 +1,23 @@
+@import '../../../shared/scss/shared.scss';
+
+.CalendarGraphWrapper {
+	position: relative;
+	background-color: $page-bg-theme-lighten10;
+	padding: 20px 20px 0;
+	border: {
+		top-left-radius: 5px;
+		top-right-radius: 5px;
+	}
+	margin: 0 auto;
+	overflow: auto;
+	user-select: none;
+
+	.Forecast {
+		text-align: center;
+		margin: 10px 0 20px;
+	}
+
+	.CanvasWrapper {
+		position: relative;
+	}
+}

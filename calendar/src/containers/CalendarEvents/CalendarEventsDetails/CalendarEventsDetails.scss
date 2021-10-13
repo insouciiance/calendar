@@ -1,0 +1,44 @@
+@import '../../../shared/scss/shared.scss';
+
+.CalendarEventsDetailsInner {
+	height: 300px;
+	border: 1px solid $page-bg-theme-lighten10;
+	border-radius: inherit;
+	overflow-x: hidden;
+	color: inherit;
+	position: relative;
+
+	@media (max-width: 650px) {
+		height: 250px;
+	}
+
+	.PointerLeft,
+	.PointerRight {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+
+	.CalendarEventsDetailsInnerFlex {
+		height: 100%;
+		padding: 15px 35px;
+		border-radius: inherit;
+		color: inherit;
+		display: flex;
+		align-items: center;
+		width: fit-content;
+		position: relative;
+		right: 0;
+		cursor: pointer;
+	}
+
+	.DistanceBar {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		width: 0;
+		background-color: white;
+		height: 3px;
+		transition: 0.3s;
+	}
+}

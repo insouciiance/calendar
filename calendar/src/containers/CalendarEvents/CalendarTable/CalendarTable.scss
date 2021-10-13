@@ -1,0 +1,22 @@
+@import '../../../shared/scss/shared.scss';
+
+.CalendarScheduleChartTableContent {
+	background-color: $page-bg-theme-lighten10;
+	border-radius: 5px;
+	height: 330px;
+	overflow-x: hidden;
+	.CalendarScheduleChartTableContentInner {
+		display: flex;
+		justify-content: left;
+		align-items: flex-start;
+		height: 100%;
+		margin: 0 3%;
+		overflow-y: hidden;
+		.ColumnWrapper {
+			height: 330px;
+			margin: 0 1%;
+			position: relative;
+			z-index: 0;
+		}
+	}
+}

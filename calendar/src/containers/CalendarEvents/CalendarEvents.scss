@@ -1,0 +1,110 @@
+@import '../..//shared/scss/shared.scss';
+
+.CalendarScheduleWrapper {
+	color: rgb(196, 196, 196);
+
+	.CalendarScheduleChart {
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 15px 25px;
+		width: 90%;
+		background-color: lighten($color: $page-bg-theme, $amount: 5);
+		border-radius: 5px;
+		margin: 5px auto;
+
+		@media (max-width: 800px) {
+			padding: 10px;
+			margin: 0;
+			width: 100%;
+		}
+
+		.UpperBar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.CurrentDateTime {
+				color: $page-main-text-color;
+				margin: 15px 0;
+				padding: 0 15px;
+			}
+
+			button {
+				border: none;
+				background-color: $page-bg-theme;
+				color: $page-main-text-color;
+				padding: 8px;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: 0.1s;
+				border: 2px solid transparent;
+
+				i {
+					padding-right: 8px;
+				}
+
+				&:hover {
+					background-color: $page-bg-theme-lighten5;
+					border-color: $page-bg-theme;
+				}
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+
+		.CalendarScheduleChartTable,
+		.CalendarEventsDetails {
+			border-radius: inherit;
+
+			@media (max-width: 1150px) {
+				width: 100%;
+			}
+
+			.CalendarScheduleChartContentWrapper {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				overflow-x: hidden;
+				.CalendarScheduleChartEventsContainer {
+					position: relative;
+					margin: 30px auto 0;
+					width: 92%;
+					overflow: hidden;
+					height: 410px;
+					.CalendarScheduleChartContentFrames {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						.CalendarScheduleChartContent {
+							width: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+
+							&:nth-of-type(1) {
+								left: -100%;
+							}
+
+							&:nth-of-type(3) {
+								left: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.CalendarEventsDetails {
+			padding-top: 30px;
+		}
+
+		.CalendarGraph {
+			width: 100%;
+		}
+	}
+}
