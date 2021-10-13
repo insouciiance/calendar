@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
+import ReactCountryFlag from 'react-country-flag';
 
 import classes from './CalendarTableBar.scss';
 import { setSelectedElementIndex } from '../../../../store/actions';
@@ -74,7 +75,7 @@ const CalendarTableBar = props => {
 				<div className={classes.Date}>{date.format('HH:mm')}</div>
 				<div className={classes.Country}>
 					<span className={classes.CountryName}>{countryCode}</span>
-					<div className={`flag-icon flag-icon-${countryCode.toLowerCase()}`} />
+					<ReactCountryFlag countryCode={countryCode.toLowerCase()} svg />
 				</div>
 			</div>
 			<div className={classes.EventsCount}>{eventsCount < 10 ? eventsCount : '9+'}</div>

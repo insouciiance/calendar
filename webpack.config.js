@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.jsx',
+	entry: './calendar/src/index.jsx',
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
@@ -47,7 +47,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.html'
+			template: './calendar/src/index.html'
 		})
 	],
 	optimization: {

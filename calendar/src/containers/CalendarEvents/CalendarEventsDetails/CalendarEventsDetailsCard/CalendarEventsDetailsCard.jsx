@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
+import ReactCountryFlag from 'react-country-flag';
 
 import classes from './CalendarEventsDetailsCard.scss';
 import { setSelectedElementIndex } from '../../../../store/actions';
@@ -42,7 +43,7 @@ const CalendarEventDetailsCard = props => {
 			<div className={classes.CalendarEventDetailsCardCountryImportance}>
 				<div className={classes.CalendarEventDetailsCardCountry}>
 					<div className={classes.CalendarEventDetailsCardCountryCode}>{countryCode}</div>
-					<div className={`flag-icon flag-icon-${countryCode.toLowerCase()}`} />
+					<ReactCountryFlag countryCode={countryCode.toUpperCase()} svg />
 				</div>
 				<div className={`${classes.CalendarEventDetailsCardImportance} ${importanceClass}`}>
 					<div style={{ backgroundColor: color }} />
