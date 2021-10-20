@@ -4,56 +4,66 @@ $page-bg-theme-lighten10: #3e3e3e;
 $page-bg-theme-lighten15: #4a4a4a;
 $page-bg-theme-lighten20: #575757;
 
-$page-main-text-color: rgb(153, 147, 145);
+$page-main-text-color: #999391;
+
+$backdrop-background-color-light: #000000b3;
+$backdrop-background-color-dark: #000000b3;
+$backdrop-text-light-color: #fff;
+
+$validation-error-color: #f00;
+$close-button-color: #f00;
 
 .PointerLeft,
 .PointerRight {
-	cursor: pointer;
-	z-index: 1;
-	font-size: 24px;
-	line-height: 24px;
-	text-align: center;
-	height: 36px;
-	width: 36px;
-	color: lightblue;
-	background-color: transparentize($color: $page-bg-theme-lighten20, $amount: 0.15);
-	padding: 6px 8px 6px;
-	border-radius: 50%;
-	user-select: none;
-	transition: 0.15s;
+    background-color: transparentize(
+        $color: $page-bg-theme-lighten20,
+        $amount: 0.15
+    );
+    border-radius: 50%;
+    color: #add8e6;
+    cursor: pointer;
+    font-size: 24px;
+    height: 36px;
+    line-height: 24px;
+    padding: 6px 8px;
+    text-align: center;
+    transition: 0.15s;
+    user-select: none;
+    width: 36px;
+    z-index: 1;
 
-	&:hover {
-		background-color: $page-bg-theme-lighten20;
-	}
+    &:hover {
+        background-color: $page-bg-theme-lighten20;
+    }
 }
 
 .PointerLeft {
-	left: 5px;
+    left: 5px;
 }
 
 .PointerRight {
-	right: 5px;
+    right: 5px;
 }
 
 button {
-	border: none;
-	background-color: $page-bg-theme;
-	color: $page-main-text-color;
-	padding: 8px;
-	cursor: pointer;
-	transition: 0.1s;
-	border: 1px solid $page-bg-theme-lighten10;
+    background-color: $page-bg-theme;
+    border: 0;
+    border: 1px solid $page-bg-theme-lighten10;
+    color: $page-main-text-color;
+    cursor: pointer;
+    padding: 8px;
+    transition: 0.1s;
 
-	i {
-		padding-right: 8px;
-	}
+    i {
+        padding-right: 8px;
+    }
 
-	&:hover:not(:disabled) {
-		background-color: $page-bg-theme-lighten5;
-		border-color: $page-bg-theme-lighten15;
-	}
+    &:hover:not(:disabled) {
+        background-color: $page-bg-theme-lighten5;
+        border-color: $page-bg-theme-lighten15;
+    }
 }
 
 *:focus {
-	outline: none;
+    outline: none;
 }

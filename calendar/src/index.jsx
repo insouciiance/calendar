@@ -15,19 +15,22 @@ import tutorialReducer from './store/reducers/tutorialReducer';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-	main: mainReducer,
-	customizations: customizationsReducer,
-	auth: authReducer,
-	tutorial: tutorialReducer
+    main: mainReducer,
+    customizations: customizationsReducer,
+    auth: authReducer,
+    tutorial: tutorialReducer,
 });
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(thunk)),
+);
 
 ReactDOM.render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Provider>,
-	document.getElementById('main')
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>,
+    document.getElementById('main'),
 );

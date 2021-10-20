@@ -1,23 +1,23 @@
-@import '../../../shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 .CalendarGraphWrapper {
-	position: relative;
-	background-color: $page-bg-theme-lighten10;
-	padding: 20px 20px 0;
-	border: {
-		top-left-radius: 5px;
-		top-right-radius: 5px;
-	}
-	margin: 0 auto;
-	overflow: auto;
-	user-select: none;
+    background-color: $page-bg-theme-lighten10;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 20px 20px 0;
+    position: relative;
+    user-select: none;
+    border: {
+        top-left-radius: 5px;
+        top-right-radius: 5px;
+    }
 
-	.Forecast {
-		text-align: center;
-		margin: 10px 0 20px;
-	}
+    .Forecast {
+        margin: 10px 0 20px;
+        text-align: center;
+    }
 
-	.CanvasWrapper {
-		position: relative;
-	}
+    .CanvasWrapper {
+        position: relative;
+    }
 }

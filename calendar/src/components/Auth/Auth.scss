@@ -1,88 +1,90 @@
-@import '../../shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 .Wrapper {
-	padding-top: 200px;
-	.FormContainer {
-		margin: 0 auto 0;
-		background-color: $page-bg-theme-lighten5;
-		width: 40%;
-		padding: 30px 0 0;
+    padding-top: 200px;
+}
 
-		@media (max-width: 1200px) {
-			width: 60%;
-		}
+.FormContainer {
+    background-color: $page-bg-theme-lighten5;
+    margin: 0 auto;
+    padding: 30px 0 0;
+    width: 40%;
 
-		@media (max-width: 800px) {
-			width: 80%;
-		}
+    @media (max-width: 1200px) {
+        width: 60%;
+    }
 
-		@media (max-width: 600px) {
-			width: 96%;
-		}
+    @media (max-width: 800px) {
+        width: 80%;
+    }
 
-		h3 {
-			text-align: center;
-			color: $page-main-text-color;
-		}
+    @media (max-width: 600px) {
+        width: 96%;
+    }
 
-		.Error {
-			text-align: center;
-			span {
-				color: red;
-			}
-		}
+    h3 {
+        color: $page-main-text-color;
+        text-align: center;
+    }
 
-		form {
-			padding: 15px;
+    .Error {
+        text-align: center;
 
-			div {
-				margin: 10px 0;
-				color: $page-main-text-color;
+        span {
+            color: $validation-error-color;
+        }
+    }
+}
 
-				label {
-					display: inline-block;
-					width: 40%;
-				}
+form {
+    padding: 15px;
 
-				input {
-					display: inline-block;
-					width: 60%;
-					border: none;
-					background-color: $page-bg-theme;
-					line-height: 26px;
-					font-size: 16px;
-					padding: 5px;
-					border-radius: 2px;
-					color: $page-bg-theme-lighten20;
-					border: 1px solid transparent;
+    .SubmitButton {
+        margin-top: 30px;
+        width: 100%;
 
-					&:focus {
-						outline: none;
-					}
-				}
-			}
+        &[disabled] {
+            background-color: $page-bg-theme-lighten10;
+            color: $page-bg-theme-lighten20;
+        }
+    }
+}
 
-			.SubmitButton {
-				width: 100%;
-				margin-top: 30px;
+.FieldSet {
+    color: $page-main-text-color;
+    margin: 10px 0;
 
-				&[disabled] {
-					background-color: $page-bg-theme-lighten10;
-					color: $page-bg-theme-lighten20;
-				}
-			}
-		}
-	}
+    label {
+        display: inline-block;
+        width: 40%;
+    }
 
-	.SwitchAuthTypeLink {
-		display: block;
-		text-align: center;
-		font-size: 14px;
-		margin-top: 10px;
-		color: $page-bg-theme-lighten20;
+    input {
+        background-color: $page-bg-theme;
+        border: 0;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        color: $page-bg-theme-lighten20;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        padding: 5px;
+        width: 60%;
 
-		&:active {
-			color: $page-bg-theme-lighten10;
-		}
-	}
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.SwitchAuthTypeLink {
+    color: $page-bg-theme-lighten20;
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+
+    &:active {
+        color: $page-bg-theme-lighten10;
+    }
 }

@@ -1,110 +1,113 @@
-@import '../..//shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 .CalendarScheduleWrapper {
-	color: rgb(196, 196, 196);
+    color: #c4c4c4;
+}
 
-	.CalendarScheduleChart {
-		padding: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 15px 25px;
-		width: 90%;
-		background-color: lighten($color: $page-bg-theme, $amount: 5);
-		border-radius: 5px;
-		margin: 5px auto;
+.CalendarScheduleChart {
+    background-color: lighten($color: $page-bg-theme, $amount: 5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px auto;
+    padding: 10px;
+    padding: 15px 25px;
+    width: 90%;
 
-		@media (max-width: 800px) {
-			padding: 10px;
-			margin: 0;
-			width: 100%;
-		}
+    @media (max-width: 800px) {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+    }
+}
 
-		.UpperBar {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+.UpperBar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 
-			.CurrentDateTime {
-				color: $page-main-text-color;
-				margin: 15px 0;
-				padding: 0 15px;
-			}
+    .CurrentDateTime {
+        color: $page-main-text-color;
+        margin: 15px 0;
+        padding: 0 15px;
+    }
 
-			button {
-				border: none;
-				background-color: $page-bg-theme;
-				color: $page-main-text-color;
-				padding: 8px;
-				border-radius: 5px;
-				cursor: pointer;
-				transition: 0.1s;
-				border: 2px solid transparent;
+    button {
+        background-color: $page-bg-theme;
+        border: 0;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        color: $page-main-text-color;
+        cursor: pointer;
+        padding: 8px;
+        transition: 0.1s;
 
-				i {
-					padding-right: 8px;
-				}
+        i {
+            padding-right: 8px;
+        }
 
-				&:hover {
-					background-color: $page-bg-theme-lighten5;
-					border-color: $page-bg-theme;
-				}
+        &:hover {
+            background-color: $page-bg-theme-lighten5;
+            border-color: $page-bg-theme;
+        }
 
-				&:focus {
-					outline: none;
-				}
-			}
-		}
+        &:focus {
+            outline: none;
+        }
+    }
+}
 
-		.CalendarScheduleChartTable,
-		.CalendarEventsDetails {
-			border-radius: inherit;
+.CalendarScheduleChartTable,
+.CalendarEventsDetails {
+    border-radius: inherit;
 
-			@media (max-width: 1150px) {
-				width: 100%;
-			}
+    @media (max-width: 1150px) {
+        width: 100%;
+    }
+}
 
-			.CalendarScheduleChartContentWrapper {
-				position: relative;
-				display: flex;
-				align-items: center;
-				justify-content: space-around;
-				overflow-x: hidden;
-				.CalendarScheduleChartEventsContainer {
-					position: relative;
-					margin: 30px auto 0;
-					width: 92%;
-					overflow: hidden;
-					height: 410px;
-					.CalendarScheduleChartContentFrames {
-						width: 100%;
-						height: 100%;
-						position: relative;
-						.CalendarScheduleChartContent {
-							width: 100%;
-							position: absolute;
-							top: 0;
-							left: 0;
+.CalendarScheduleChartContentWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: hidden;
+    position: relative;
 
-							&:nth-of-type(1) {
-								left: -100%;
-							}
+    .CalendarScheduleChartEventsContainer {
+        height: 410px;
+        margin: 30px auto 0;
+        overflow: hidden;
+        position: relative;
+        width: 92%;
+    }
+}
 
-							&:nth-of-type(3) {
-								left: 100%;
-							}
-						}
-					}
-				}
-			}
-		}
+.CalendarScheduleChartContentFrames {
+    height: 100%;
+    position: relative;
+    width: 100%;
 
-		.CalendarEventsDetails {
-			padding-top: 30px;
-		}
+    .CalendarScheduleChartContent {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
 
-		.CalendarGraph {
-			width: 100%;
-		}
-	}
+        &:nth-of-type(1) {
+            left: -100%;
+        }
+
+        &:nth-of-type(3) {
+            left: 100%;
+        }
+    }
+}
+
+.CalendarEventsDetails {
+    padding-top: 30px;
+}
+
+.CalendarGraph {
+    width: 100%;
 }

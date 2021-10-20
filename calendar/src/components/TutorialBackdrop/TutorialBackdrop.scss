@@ -1,49 +1,49 @@
-@import '../../shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 .Backdrop {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background-color: rgba(0, 0, 0, 0.7);
-	user-select: none;
-	pointer-events: none;
-	font-size: 18px;
-	border: 3px solid $page-bg-theme-lighten15;
-	border-radius: 5px;
+    background-color: $backdrop-background-color-dark;
+    border: 3px solid $page-bg-theme-lighten15;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    user-select: none;
+    width: 100%;
+    z-index: 9999;
 
-	.BackdropContents {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: whitesmoke;
-		text-align: center;
+    .BackdropContents {
+        color: $backdrop-text-light-color;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
-		@media (max-width: 1000px) {
-			width: 90%;
-		}
-	}
+        @media (max-width: 1000px) {
+            width: 90%;
+        }
+    }
 }
 
 .FullPageBackdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9998;
-	background-color: rgba(0, 0, 0, 0.3);
-	cursor: pointer;
+    background-color: $backdrop-background-color-light;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9998;
 }
 
 .ExitButton {
-	position: fixed;
-	top: 3px;
-	left: 5%;
-	z-index: 9999;
-	width: 64px;
-	border-bottom: 1px solid red;
+    border-bottom: 1px solid $close-button-color;
+    left: 5%;
+    position: fixed;
+    top: 3px;
+    width: 64px;
+    z-index: 9999;
 }

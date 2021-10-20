@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://localhost:44330/api';
+axios.defaults.baseURL = 'http://localhost:5000/api';
 
 axios.interceptors.request.use(req => {
-	req.headers.authorization = `Bearer ${localStorage.getItem('token')}`;
+    req.headers.authorization = `Bearer ${localStorage.getItem('token')}`;
 
-	return req;
+    return req;
 });
 
 export default axios;

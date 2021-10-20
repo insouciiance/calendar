@@ -1,24 +1,24 @@
-@import './shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-	background-color: $page-bg-theme;
-	min-width: 250px;
-	scroll-behavior: smooth;
+    background-color: $page-bg-theme;
+    min-width: 250px;
+    scroll-behavior: smooth;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ::-webkit-scrollbar {
-	background-color: $page-bg-theme-lighten10;
+    background-color: $page-bg-theme-lighten10;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: $page-bg-theme-lighten15;
+    background-color: $page-bg-theme-lighten15;
 }

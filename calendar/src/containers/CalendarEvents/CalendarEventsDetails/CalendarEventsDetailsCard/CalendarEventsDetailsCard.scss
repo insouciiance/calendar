@@ -1,100 +1,107 @@
-@import '../../../../shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 .CalendarEventDetailsCard {
-	height: 80%;
-	width: 200px;
-	background-color: $page-bg-theme;
-	margin: 0 20px;
-	padding: 10px;
-	border-radius: inherit;
-	color: inherit;
-	cursor: pointer;
-	user-select: none;
-	transition: 0.2s;
-	border: 1px solid transparent;
+    background-color: $page-bg-theme;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    color: inherit;
+    cursor: pointer;
+    height: 80%;
+    margin: 0 20px;
+    padding: 10px;
+    transition: 0.2s;
+    user-select: none;
+    width: 200px;
 
-	&:hover {
-		background-color: lighten($color: $page-bg-theme, $amount: 2);
-	}
+    &:hover {
+        background-color: lighten($color: $page-bg-theme, $amount: 2);
+    }
 
-	&.IsSelected {
-		background-color: $page-bg-theme-lighten10;
-		transform: scale(1.1);
-	}
+    &.IsSelected {
+        background-color: $page-bg-theme-lighten10;
+        transform: scale(1.1);
+    }
+}
 
-	.CalendarEventDetailsCardName {
-		font-size: 18px;
-		line-height: 18px;
-		height: 40px;
-		margin-bottom: 15px;
-	}
-	.CalendarEventDetailsCardDate {
-		margin: 15px 0;
-		div {
-			margin: 5px;
-		}
-	}
-	.CalendarEventDetailsCardCountryImportance {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+.CalendarEventDetailsCardName {
+    font-size: 18px;
+    height: 40px;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
 
-		.CalendarEventDetailsCardCountry {
-			width: 35%;
-			div {
-				display: inline-block;
-			}
-			.CalendarEventDetailsCardCountryCode {
-				margin-right: 10px;
-			}
-		}
-		.CalendarEventDetailsCardImportance {
-			height: 5px;
-			width: 60%;
-			position: relative;
-		}
-	}
+.CalendarEventDetailsCardDate {
+    margin: 15px 0;
+
+    div {
+        margin: 5px;
+    }
+}
+
+.CalendarEventDetailsCardCountryImportance {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .CalendarEventDetailsCardCountry {
+        width: 35%;
+
+        div {
+            display: inline-block;
+        }
+
+        .CalendarEventDetailsCardCountryCode {
+            margin-right: 10px;
+        }
+    }
+
+    .CalendarEventDetailsCardImportance {
+        height: 5px;
+        position: relative;
+        width: 60%;
+    }
 }
 
 .Ordinary,
 .Compelling,
 .Important {
-	&::before,
-	div {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		border-radius: 10px;
-	}
-	&::before {
-		right: 0;
-		background-color: $page-bg-theme-lighten5;
-	}
+    &::before,
+    div {
+        border-radius: 10px;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
 
-	div {
-		transition: 0.2s;
-	}
+    &::before {
+        background-color: $page-bg-theme-lighten5;
+        right: 0;
+    }
+
+    div {
+        transition: 0.2s;
+    }
 }
 
 .Ordinary {
-	div {
-		right: 67%;
-		// background-color: green;
-	}
+    div {
+        right: 67%;
+        // background-color: green;
+    }
 }
 
 .Compelling {
-	div {
-		right: 33%;
-		// background-color: orange;
-	}
+    div {
+        right: 33%;
+        // background-color: orange;
+    }
 }
 
 .Important {
-	div {
-		right: 0;
-		// background-color: red;
-	}
+    div {
+        right: 0;
+        // background-color: red;
+    }
 }

@@ -1,69 +1,112 @@
+import {
+    ORDINARY_COLOR,
+    COMPELLING_COLOR,
+    IMPORTANT_COLOR,
+    UPPER_PANEL_SCROLL_SPEED,
+    BOTTOM_PANEL_SCROLL_SPEED,
+    BOTTOM_PANEL_SCROLL_DISTANCE,
+    FONT_FAMILY,
+} from '../js/customizationTypes';
+
+import {
+    ORDINARY_COLOR_DEFAULT,
+    COMPELLING_COLOR_DEFAULT,
+    IMPORTANT_COLOR_DEFAULT,
+    UPPER_PANEL_SCROLL_SPEED_DEFAULT,
+    BOTTOM_PANEL_SCROLL_SPEED_DEFAULT,
+    BOTTOM_PANEL_SCROLL_DISTANCE_DEFAULT,
+    FONT_FAMILY_DEFAULT,
+} from '../js/customizationDefaults';
+
 const customizations = {
-	getCustomizations: () => {
-		const localStorageCustomizations = {
-			ordinaryColor: localStorage.getItem('ordinaryColor') || 'green',
-			compellingColor: localStorage.getItem('compellingColor') || 'orange',
-			importantColor: localStorage.getItem('importantColor') || 'red',
-			upperPanelScrollSpeed: +localStorage.getItem('upperPanelScrollSpeed') || 300,
-			bottomPanelScrollSpeed: +localStorage.getItem('bottomPanelScrollSpeed') || 150,
-			bottomPanelScrollDistance: +localStorage.getItem('bottomPanelScrollDistance') || 300,
-			fontFamily: localStorage.getItem('fontFamily') || 'sans-serif'
-		};
+    getCustomizations: () => ({
+        ordinaryColor:
+            localStorage.getItem(ORDINARY_COLOR) || ORDINARY_COLOR_DEFAULT,
+        compellingColor:
+            localStorage.getItem(COMPELLING_COLOR) || COMPELLING_COLOR_DEFAULT,
+        importantColor:
+            localStorage.getItem(IMPORTANT_COLOR) || IMPORTANT_COLOR_DEFAULT,
+        upperPanelScrollSpeed:
+            +localStorage.getItem(UPPER_PANEL_SCROLL_SPEED) ||
+            UPPER_PANEL_SCROLL_SPEED_DEFAULT,
+        bottomPanelScrollSpeed:
+            +localStorage.getItem(BOTTOM_PANEL_SCROLL_SPEED) ||
+            BOTTOM_PANEL_SCROLL_SPEED_DEFAULT,
+        bottomPanelScrollDistance:
+            +localStorage.getItem(BOTTOM_PANEL_SCROLL_DISTANCE) ||
+            BOTTOM_PANEL_SCROLL_DISTANCE_DEFAULT,
+        fontFamily: localStorage.getItem(FONT_FAMILY) || FONT_FAMILY_DEFAULT,
+    }),
 
-		return localStorageCustomizations;
-	},
+    checkCustomizations: () => {
+        if (!localStorage.getItem(ORDINARY_COLOR)) {
+            localStorage.setItem(ORDINARY_COLOR, ORDINARY_COLOR_DEFAULT);
+        }
 
-	checkCustomizations: () => {
-		if (localStorage.getItem('ordinaryColor') === null) {
-			localStorage.setItem('ordinaryColor', 'green');
-		}
+        if (!localStorage.getItem(COMPELLING_COLOR)) {
+            localStorage.setItem(COMPELLING_COLOR, COMPELLING_COLOR_DEFAULT);
+        }
 
-		if (localStorage.getItem('compellingColor') === null) {
-			localStorage.setItem('compellingColor', 'orange');
-		}
+        if (!localStorage.getItem(IMPORTANT_COLOR)) {
+            localStorage.setItem(IMPORTANT_COLOR, IMPORTANT_COLOR_DEFAULT);
+        }
 
-		if (localStorage.getItem('importantColor') === null) {
-			localStorage.setItem('importantColor', 'red');
-		}
+        if (!localStorage.getItem(UPPER_PANEL_SCROLL_SPEED)) {
+            localStorage.setItem(
+                UPPER_PANEL_SCROLL_SPEED,
+                UPPER_PANEL_SCROLL_SPEED_DEFAULT,
+            );
+        }
 
-		if (localStorage.getItem('upperPanelScrollSpeed') === null) {
-			localStorage.setItem('upperPanelScrollSpeed', '300');
-		}
+        if (!localStorage.getItem(BOTTOM_PANEL_SCROLL_SPEED)) {
+            localStorage.setItem(
+                BOTTOM_PANEL_SCROLL_SPEED,
+                BOTTOM_PANEL_SCROLL_SPEED_DEFAULT,
+            );
+        }
 
-		if (localStorage.getItem('bottomPanelScrollSpeed') === null) {
-			localStorage.setItem('bottomPanelScrollSpeed', '150');
-		}
+        if (!localStorage.getItem(BOTTOM_PANEL_SCROLL_DISTANCE)) {
+            localStorage.setItem(
+                BOTTOM_PANEL_SCROLL_DISTANCE,
+                BOTTOM_PANEL_SCROLL_DISTANCE_DEFAULT,
+            );
+        }
 
-		if (localStorage.getItem('bottomPanelScrollDistance') === null) {
-			localStorage.setItem('bottomPanelScrollDistance', '300');
-		}
+        if (!localStorage.getItem(FONT_FAMILY)) {
+            localStorage.setItem(FONT_FAMILY, FONT_FAMILY_DEFAULT);
+        }
+    },
 
-		if (localStorage.getItem('fontFamily') === null) {
-			localStorage.setItem('fontFamily', 'sans-serif');
-		}
-	},
+    restoreDefaultCustomizations: () => {
+        localStorage.setItem(ORDINARY_COLOR, ORDINARY_COLOR_DEFAULT);
+        localStorage.setItem(COMPELLING_COLOR, COMPELLING_COLOR_DEFAULT);
+        localStorage.setItem(IMPORTANT_COLOR, IMPORTANT_COLOR_DEFAULT);
+        localStorage.setItem(
+            UPPER_PANEL_SCROLL_SPEED,
+            UPPER_PANEL_SCROLL_SPEED_DEFAULT,
+        );
+        localStorage.setItem(
+            BOTTOM_PANEL_SCROLL_SPEED,
+            BOTTOM_PANEL_SCROLL_SPEED_DEFAULT,
+        );
+        localStorage.setItem(
+            BOTTOM_PANEL_SCROLL_DISTANCE,
+            BOTTOM_PANEL_SCROLL_DISTANCE_DEFAULT,
+        );
+        localStorage.setItem(FONT_FAMILY, FONT_FAMILY_DEFAULT);
+    },
 
-	restoreDefaultCustomizations: () => {
-		localStorage.setItem('ordinaryColor', 'green');
-		localStorage.setItem('compellingColor', 'orange');
-		localStorage.setItem('importantColor', 'red');
-		localStorage.setItem('upperPanelScrollSpeed', '300');
-		localStorage.setItem('bottomPanelScrollSpeed', '150');
-		localStorage.setItem('bottomPanelScrollDistance', '300');
-		localStorage.setItem('fontFamily', 'sans-serif');
-	},
+    setCustomization: (name, value) => {
+        localStorage.setItem(name, value);
+    },
 
-	setCustomization: (name, value) => {
-		localStorage.setItem(name, value);
-	},
-
-	setCustomizations: customizationsList => {
-		if (customizationsList) {
-			Object.keys(customizationsList).forEach(key => {
-				localStorage.setItem(key, customizationsList[key]);
-			});
-		}
-	}
+    setCustomizations: customizationsList => {
+        if (customizationsList) {
+            Object.keys(customizationsList).forEach(key => {
+                localStorage.setItem(key, customizationsList[key]);
+            });
+        }
+    },
 };
 
 export default customizations;

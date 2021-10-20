@@ -22,9 +22,19 @@
     },
     "rules": {
         "sonarjs/cognitive-complexity": ["error", 15],
-        "indent": ["error", 4],
+        "sonarjs/no-small-switch": 0,
+        "indent": ["error", 4, { "SwitchCase": 1 }],
         "no-extra-parens": ["error", "all", { "ignoreJSX": "multi-line" }],
         "react/prop-types": 0,
-        "react/destructuring-assignment": [2, "always"]
+        "react/destructuring-assignment": [2, "always"],
+        "max-len": [
+            "error",
+            80,
+            {
+                "ignoreStrings": true,
+                "ignoreComments": true,
+                "ignoreTemplateLiterals": true
+            }
+        ]
     }
 }

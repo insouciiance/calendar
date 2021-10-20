@@ -1,43 +1,44 @@
-@import '../../../shared/scss/shared.scss';
+@use '/calendar/src/shared/scss/shared.scss' as *;
 
 .CalendarDays {
-	padding: 5px;
-	display: flex;
-	justify-content: space-around;
-	user-select: none;
-	height: 34px;
-	div {
-		margin: 0 1%;
-		height: 24px;
-		text-align: center;
-		cursor: pointer;
-		position: relative;
-		color: $page-main-text-color;
+    display: flex;
+    height: 34px;
+    justify-content: space-around;
+    padding: 5px;
+    user-select: none;
 
-		&::before {
-			content: '';
-			height: 2px;
-			width: 100%;
-			position: absolute;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
-			background-color: $page-bg-theme;
-		}
+    div {
+        color: $page-main-text-color;
+        cursor: pointer;
+        height: 24px;
+        margin: 0 1%;
+        position: relative;
+        text-align: center;
 
-		&::after {
-			content: attr(data-date);
-			color: inherit;
-			background-color: $page-bg-theme-lighten5;
-			padding: 5px;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+        &::before {
+            background-color: $page-bg-theme;
+            content: '';
+            height: 2px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+        }
 
-		&:hover {
-			color: lightgray;
-		}
-	}
+        &::after {
+            background-color: $page-bg-theme-lighten5;
+            color: inherit;
+            content: attr(data-date);
+            left: 50%;
+            padding: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            color: #d3d3d3;
+        }
+    }
 }
