@@ -1,4 +1,4 @@
-﻿using calendar_backend.Models;
+using calendar_backend.Models;
 using calendar_backend.Models.DbContexts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -120,48 +120,6 @@ namespace calendar_backend.Controllers
 
             return new JsonResult(_calendarEvents.CalendarEvents.ToArray());
         }
-
-        //[HttpPost]
-        //[AllowAnonymous]
-        //public IActionResult PostData(string name)
-        //{
-        //    Random random = new Random();
-        //    int month = random.Next(2, 7);
-
-        //    int day;
-        //    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-        //    {
-        //        day = random.Next(1, 32);
-        //    }
-        //    else if (month == 2)
-        //    {
-        //        day = random.Next(1, 30);
-        //    }
-        //    else
-        //    {
-        //        day = random.Next(1, 31);
-        //    }
-
-        //    int hour = random.Next(0, 24);
-        //    int minute = random.Next(0, 4) * 15;
-
-        //    int countryIndex = random.Next(0, countryCodes.Length);
-
-        //    CalendarEvent eEvent = new CalendarEvent
-        //    {
-        //        Id = Guid.NewGuid().ToString(),
-        //        Name = name,
-        //        Date = new DateTime(2020, month, day, hour, minute, 0),
-        //        NormalizedDate = new DateTime(2020, month, day),
-        //        Importance = random.Next(0, 3),
-        //        CountryCode = countryCodes[countryIndex]
-        //    };
-
-        //    _calendarEvents.Add(eEvent);
-        //    _calendarEvents.SaveChanges();
-
-        //    return new JsonResult(eEvent);
-        //}
 
         [HttpGet]
         public async Task<IActionResult> Get(string startDateIso, string endDateIso)
